@@ -5,6 +5,10 @@ import reducer from "./greeting/greeting";
 
 const middleware = applyMiddleware(thunk, logger);
 
-const store = legacy_createStore(combineReducers({ greeting: reducer }), middleware);
+const reducers = combineReducers({
+  greeting: reducer,
+});
+
+const store = legacy_createStore(reducers, middleware);
 
 export default store;

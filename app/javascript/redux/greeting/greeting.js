@@ -1,15 +1,19 @@
 const GET_GREETING = 'helloWorldReactReils/greeting/GET_GREETING';
 
-export const getGreeting = () => {
+export const getGreeting = (data) => {
   return {
     type: GET_GREETING,
-    greeting: 'Hello world',
+    payload: {
+      data,
+    },
   };
 };
 
 const getGreetingAsync = () => (dispatch) => {
   fetch('/messages.json')
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((res) => {
       dispatch(getGreeting(res.greeting));
     })
@@ -21,10 +25,7 @@ const getGreetingAsync = () => (dispatch) => {
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case GET_GREETING:
-      return {
-        ...state,
-        greeting: action.greeting,
-      };
+      return action.payload.data;
     default:
       return state;
   }
