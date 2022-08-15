@@ -53,7 +53,7 @@ Then install the gems:
 If you got an error 'The asset "application.js" is not in the asset pipeline' you need to run
 
 ```
--$ `yarn add react react-dom react-router-dom react-rails`
+-$ yarn add react react-dom react-router-dom
 ```
 
 Then run the server:
