@@ -21,7 +21,7 @@ For using the app you can use the Demo link above to see the app in action, no f
 
 ## Developments
 
-You should have `ruby on rails` and `postgresql` installed and running on your machine in adition to the `react-rails` gem  before you can start developing this app.
+You should have `ruby on rails` and `postgresql` installed and running on your machine in adition to the `react-rails` gem before you can start developing this app.
 
 ### Getting Started
 
@@ -42,11 +42,33 @@ Then install the gems:
 -$ bundle install
 ```
 
+```
+-$ rake db:create db:migrate
+```
+
+```
+-$ yarn install
+```
+
+If you got an error 'The asset "application.js" is not in the asset pipeline' you need to run
+
+```
+-$ yarn add react react-dom react-router-dom
+```
+
 Then run the server:
 
 ```
 -$ rails server
 ```
+
+or
+
+```
+-$ ./bin/dev
+```
+
+Then open the browser to http://localhost:3000/
 
 Then visit the URL:
 
@@ -59,7 +81,6 @@ To run rspec, in your terminal for testing the methods:
 ```
 -$ rspec
 ```
-
 
 ## Authors
 
