@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to message_url(@message), notice: "Message was successfully created." }
+        format.html { redirect_to message_url(@message), notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -30,11 +30,10 @@ class MessagesController < ApplicationController
     end
   end
 
-
   private
 
-    # Only allow a list of trusted parameters through.
-    def message_params
-      params.require(:message).permit(:title, :text)
-    end
+  # Only allow a list of trusted parameters through.
+  def message_params
+    params.require(:message).permit(:title, :text)
+  end
 end
